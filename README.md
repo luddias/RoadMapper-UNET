@@ -26,7 +26,7 @@
   <p align="center">
     Rede Neural para segmentação de Mapas de Remissão.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Arquivo no Kaggle >></strong></a>
+    <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet"><strong>Arquivo no Kaggle >></strong></a>
     <br />
     <br />
     <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv">Dataset</a>
@@ -70,8 +70,6 @@
 
 ## Sobre o Projeto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Projeto desenvolvido usando a rede de segmentação U-NET, biblioteca Keras e Tensorflow.
 O Road Mapper DNN tem como objetivo gerar mapas de estrada com segmentação das faixas de sinalização utilizada pelos veículos, tendo como entrada mapas de remissão gerados pelo LIDAR - sensor laser que faz parte do sistema de carros autônomos como o ASTRO da Lume Robotics.
 
@@ -85,7 +83,7 @@ O Road Mapper DNN tem como objetivo gerar mapas de estrada com segmentação das
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes using Laser Remission and Deep Neural Networks", entretanto utilizando-se uma rede neural de segmentaçõ semântica diferente e mais atual, U-NET, ao invés da E-NET.
 
 ### Tecnologias Utilizadas
 
