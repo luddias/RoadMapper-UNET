@@ -178,7 +178,8 @@ CARNEIRO, Raphael Vivacqua; GUIDOLINI, Ranik; CARDOSO, Vinicius Brito; NASCIMENT
 [windowsPy]: https://img.shields.io/badge/Instalar%20Python%20no%20Windows-0078D6?style=for-the-badge&logo=windows10&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-windows%2F
 [macPy]: https://img.shields.io/badge/Instalar%20Python%20no%20Mac%20OS-000000?style=for-the-badge&logo=apple&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-mac%2F
 [linuxPy]: https://img.shields.io/badge/Instalar%20Python%20no%20LInux-F09D13?style=for-the-badge&logo=linux&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-linux%2F
-[email-url]: https://img.shields.io/badge/ludmialdias.inf%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white
+[email-url]: https://img.shields.io/badge/ludmiladias.inf%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white
+
 
 
 
