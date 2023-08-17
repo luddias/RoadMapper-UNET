@@ -84,6 +84,8 @@ O Road Mapper DNN tem como objetivo gerar mapas de estrada com segmentação das
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes using Laser Remission and Deep Neural Networks", entretanto utilizando-se uma rede neural de segmentaçõ semântica diferente e mais atual, U-NET, ao invés da E-NET.
+O artigo usado como referência propõe o uso de Redes Neurais Profundas (Deep Neural Networks – DNN) para solucionar o problema de inferir a posição e as propriedades relevantes das faixas de trânsito urbanas com pouca ou nenhuma sinalização horizontal – subsistema da sinalização viária composta de marcas, símbolos e legendas, apostos sobre o pavimento da pista de rolamento – a fim de permitir a operação de carros autônomos nas descritas situações.
+Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantendo um espaço entre outros veículos, para que isso ocorra deve-se conter mapas internos das faixas das estradas. Os seres humanos fazem uso das sinalizações horizontais para se orientar quanto as estradas e existem vários trabalhos sobre como detectar essas marcações para se utilizar em sistemas ADAS, porém se essas marcas estiverem em condições ruins e o sistema depender somente disso, então se tornará impossível para o carro autônomo se locomover nas condições desejadas.
 
 ### Tecnologias Utilizadas
 
@@ -91,6 +93,7 @@ Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes 
 * [![Keras.logo][Keras]][keras-url]
 * [![Tensorflow.logo][tf]][tf-url]
 * [![numpy.logo][Numpy]][np-url]
+* [![email.logo][email-url]]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -132,26 +135,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ACKNOWLEDGMENTS -->
 ## Referências
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+CARNEIRO, Raphael Vivacqua; GUIDOLINI, Ranik; CARDOSO, Vinicius Brito; NASCIMENTO, Rafael C. Mapping Road Lanes using Laser Remission and Deep Neural Networks. IEEE, [S. l.], p. 1-8, 27 abr. 2018. <br>Disponível em: https://www.researchgate.net/publication/324859984_Mapping_Road_Lanes_Using_Laser_Remission_and_Deep_Neural_Networks. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,9 +144,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contato
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+![adress][email-url]
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,4 +178,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [windowsPy]: https://img.shields.io/badge/Instalar%20Python%20no%20Windows-0078D6?style=for-the-badge&logo=windows10&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-windows%2F
 [macPy]: https://img.shields.io/badge/Instalar%20Python%20no%20Mac%20OS-000000?style=for-the-badge&logo=apple&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-mac%2F
 [linuxPy]: https://img.shields.io/badge/Instalar%20Python%20no%20LInux-F09D13?style=for-the-badge&logo=linux&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-linux%2F
+[email-url]: https://img.shields.io/badge/banana-00000
+
 
