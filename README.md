@@ -117,8 +117,8 @@ O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste d
 Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo json e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
 
 
-Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo csv. A unica etapa que não deve ser executada antes do arquivo ser salvo no csv é o "to_categorical", que normalizar os valores das classses. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo csv.
-Como todos os processos estão sendo realizados visando que ele consiga ser executado nos limites de hardware que o Kaggle fornece, a etapa de salvamento dos arrays de teste e treino no csv é executada salvando esse array em partes. Como pode visualizar a baixo, é passado como parâmetro para a função "salvar_csv" pedaços do array que são convertidos em listas e em dataframes e depois adicionados ao final do arquivo csv por meio do modo "a" que a função "to_csv" possui, que se refere ao "append" do python.
+Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. A unica etapa que não deve ser executada antes do arquivo ser salvo no CSV é o *"to_categorical"*, que normalizar os valores das classses. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
+Como todos os processos estão sendo realizados visando que ele consiga ser executado nos limites de hardware que o Kaggle fornece, a etapa de salvamento dos arrays de teste e treino no CSV é executada salvando esse array em partes. Como pode visualizar a baixo, é passado como parâmetro para a função *"salvar_csv"* pedaços do *array* que são convertidos em listas e em dataframes e depois adicionados ao final do arquivo CSV por meio do modo "a" que a função *"to_csv"* possui, que se refere ao *"append"* do python.
 
 ```python
 
@@ -137,21 +137,18 @@ for i in range(0,8):
     salvar_csv(X_train[(i*5000):((i+1)*5000)], y_train[(i*5000):((i+1)*5000)])
 ```
 
-Logo que a etapa anterior for concluída e os arquivos csv's forem obtidos, poderá se iniciar a etapa de compilação da rede. A seguir, deve-se executar a função batch_generator e definir alguns valores para o treinamento, como os valores gerados pelo batch_generator, o tamanho dos batchs, a quantidade de dados por step, entre outros dados que estão presentes no notebook para a definição.
+Logo que a etapa anterior for concluída e os arquivos CSVs forem obtidos, poderá se iniciar a etapa de compilação da rede. A seguir, deve-se executar a função batch_generator e definir alguns valores para o treinamento, como os valores gerados pelo batch_generator, o tamanho dos batchs, a quantidade de dados por step, entre outros dados que estão presentes no notebook para a definição.
 
 
-Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho da rede com novos dados, afim de verificar sua acurácia
+Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho com novos dados, afim de verificar sua acurácia
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Aplicação
+## Resultados
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
