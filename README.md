@@ -111,11 +111,11 @@ Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos
  * ![baixarLinux][linuxPy]
 
 Foi-se utilizado nesse projeto as maquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do ![Kaggle](https://www.kaggle.com/).
-Propriedades de Hardware da máquina virtual utilizada:
-RAM: 13 GB 
-GPU: 
-Disco Rígido: 73 GB
-Saída de dados: 19.5 GB
+<br>Propriedades de Hardware da máquina virtual utilizada:
+* RAM: 13 GB 
+* GPU: 
+* Disco Rígido: 73 GB
+* Saída de dados: 19.5 GB
   
 ### Execução
 O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
