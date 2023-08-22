@@ -109,6 +109,13 @@ Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos
  * ![baixarPython][windowsPy]
  * ![baixarMac][macPy]
  * ![baixarLinux][linuxPy]
+
+Foi-se utilizado nesse projeto as maquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do ![Kaggle](https://www.kaggle.com/).
+Propriedades de Hardware da máquina virtual utilizada:
+RAM: 13 GB 
+GPU: 
+Disco Rígido: 73 GB
+Saída de dados: 19.5 GB
   
 ### Execução
 O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
@@ -138,7 +145,42 @@ for i in range(0,8):
 ```
 
 Logo que a etapa anterior for concluída e os arquivos CSVs forem obtidos, poderá se iniciar a etapa de compilação da rede. A seguir, deve-se executar a função batch_generator e definir alguns valores para o treinamento, como os valores gerados pelo batch_generator, o tamanho dos batchs, a quantidade de dados por step, entre outros dados que estão presentes no notebook para a definição.
+```python
+# Batch Generator
+from tensorflow.keras.utils import to_categorical
+import json
 
+def batch_generator(Train_df,batch_size,
+                    steps):
+    idx=1
+    while True: 
+        yield load_data(Train_df,idx-1,batch_size)## Yields data
+        if idx<=steps:
+            idx+=1
+        else:
+            idx=1
+            
+def load_data(Train_df,idx,
+              batch_size):
+    n_classes = 17
+
+    df = pd.read_csv(
+                  Train_df, skiprows=idx*batch_size,
+                  nrows=batch_size)
+    
+    x = [] 
+    y = []
+    
+    for i in range(0, batch_size):
+        x.append(json.loads(df.iloc[i,0]))
+        y.append(json.loads(df.iloc[i,1]))
+    
+    y = np.asarray(y)
+    train_masks_cat = to_categorical(y, num_classes=n_classes)
+    y_train_cat = train_masks_cat.reshape((y.shape[0], y.shape[1], y.shape[2], n_classes))
+    
+    return (np.asarray(x), y_train_cat)
+```
 
 Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho com novos dados, afim de verificar sua acurácia
 
