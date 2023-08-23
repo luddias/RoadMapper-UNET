@@ -26,7 +26,7 @@
   <p align="center">
     Rede Neural para segmentação de Mapas de Remissão.
     <br />
-    <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet?scriptVersionId=140214419"><strong>Arquivo no Kaggle >></strong></a>
+    <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet/notebook?scriptVersionId=140818335"><strong>Arquivo no Kaggle >></strong></a>
     <br />
     <br />
     <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv">Dataset</a>
