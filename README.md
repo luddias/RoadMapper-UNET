@@ -118,14 +118,8 @@ Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas 
 * Saída de dados: 19.5 GB
   
 ### Execução
-O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
 
-
-Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo json e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
-
-
-Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. A unica etapa que não deve ser executada antes do arquivo ser salvo no CSV é o *"to_categorical"*, que normalizar os valores das classses. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
-Como todos os processos estão sendo realizados visando que ele consiga ser executado nos limites de hardware que o Kaggle fornece, a etapa de salvamento dos arrays de teste e treino no CSV é executada salvando esse array em partes. Como pode visualizar a baixo, é passado como parâmetro para a função *"salvar_csv"* pedaços do *array* que são convertidos em listas e em dataframes e depois adicionados ao final do arquivo CSV por meio do modo "a" que a função *"to_csv"* possui, que se refere ao *"append"* do python.
+<p style="text-align: center;">banana</p>
 
 ```python
 
