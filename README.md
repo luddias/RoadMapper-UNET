@@ -113,7 +113,7 @@ Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos
 Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do ![Kaggle](https://www.kaggle.com/).
 <br>Propriedades de Hardware da máquina virtual utilizada:
 * RAM: 13 GB 
-* GPU: 
+* GPU: T4 x2 - 14 GB
 * Disco Rígido: 73 GB
 * Saída de dados: 19.5 GB
   
