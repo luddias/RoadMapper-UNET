@@ -102,7 +102,7 @@ Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantend
 ## Colocando pra rodar!
 
 ### Pré-Requisitos
-Siga um dos tutoriais abaixo para instalar a biblioteca Python caso esteja executando diretamente no seu dispositivo ao invés de um serviço em nuvem (colab, kaggle).
+Siga um dos tutoriais abaixo para instalar a biblioteca Python caso esteja executando diretamente no seu dispositivo ao invés de um serviço em nuvem (colab, ).
 
 Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos que estão disponíveis no jupyter notebook do projeto.
 
@@ -110,7 +110,7 @@ Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos
  * ![baixarMac][macPy]
  * ![baixarLinux][linuxPy]
 
-Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do ![Kaggle](https://www.kaggle.com/).
+Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do [Kaggle](https://www.kaggle.com/).
 <br>Propriedades de Hardware da máquina virtual utilizada:
 * RAM: 13 GB 
 * GPU: T4 x2 - 14 GB
