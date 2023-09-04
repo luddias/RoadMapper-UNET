@@ -29,9 +29,12 @@
     <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet/notebook?scriptVersionId=140818335"><strong>Arquivo no Kaggle >></strong></a>
     <br />
     <br />
-    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv">Dataset</a>
-    ·
+    <a href="https://drive.google.com/file/d/1aPpq7y0MaAZg8MKYj7dUbOeNFatMJPQa/view">Dataset PNG</a>
+    .
     <a href="https://github.com/luddias/road_mapper-study/blob/main/Artigos_e_relatorios/IJCNN_2018_UFES_Raphael_Carneiro_Mapping_road_lanes_using_laser_remission_and_deep_neural_networks-1.pdf">Artigo Base</a>
+    .
+    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv">Dataset CSV</a>
+    
   </p>
 </div>
 
