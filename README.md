@@ -84,7 +84,7 @@ O Road Mapper DNN tem como objetivo gerar mapas de estrada com segmentação das
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes using Laser Remission and Deep Neural Networks"[1], entretanto utilizando-se uma rede neural de segmentaçõ semântica diferente e mais atual, U-NET, ao invés da E-NET.
+Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes using Laser Remission and Deep Neural Networks"[1], entretanto utilizando-se uma rede neural de segmentação semântica diferente e mais atual, U-NET, ao invés da E-NET.
 O artigo usado como referência propõe o uso de Redes Neurais Profundas (Deep Neural Networks – DNN) para solucionar o problema de inferir a posição e as propriedades relevantes das faixas de trânsito urbanas com pouca ou nenhuma sinalização horizontal – subsistema da sinalização viária composta de marcas, símbolos e legendas, apostos sobre o pavimento da pista de rolamento – a fim de permitir a operação de carros autônomos nas descritas situações.
 Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantendo um espaço entre outros veículos, para que isso ocorra deve-se conter mapas internos das faixas das estradas. Os seres humanos fazem uso das sinalizações horizontais para se orientar quanto as estradas e existem vários trabalhos sobre como detectar essas marcações para se utilizar em sistemas ADAS, porém se essas marcas estiverem em condições ruins e o sistema depender somente disso, então se tornará impossível para o carro autônomo se locomover nas condições desejadas.
 
@@ -124,9 +124,20 @@ Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas 
 
 O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
 
-Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo json e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
+O processo do tratamento de dados é feito nas seguintes etapas:
+- Importar os dados das imagens para uma matriz (array)
+- Normalizar array de entrada (X)
+- Realizar o Label Encoder com o array do ground truth (Y)
+- Dividir os dados em array de treino e teste
+- Gerar Pesos das classes com base nos dados
+- Salvar Arrays em CSV
 
-Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. A unica etapa que não deve ser executada antes do arquivo ser salvo no CSV é o *"to_categorical"*, que normalizar os valores das classses. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
+*É necessário realizar o *
+
+
+Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo CSV e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
+
+Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. A unica etapa que não deve ser executada antes do arquivo ser salvo no CSV é o *"to_categorical"*, que normalizar os valores das classes. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
 
 Como todos os processos estão sendo realizados visando que ele consiga ser executado nos limites de hardware que o Kaggle fornece, a etapa de salvamento dos arrays de teste e treino no CSV é executada salvando esse array em partes. Como pode visualizar a baixo, é passado como parâmetro para a função *"salvar_csv"* pedaços do *array* que são convertidos em listas e em dataframes e depois adicionados ao final do arquivo CSV por meio do modo "a" que a função *"to_csv"* possui, que se refere ao *"append"* do python.
 
