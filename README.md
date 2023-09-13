@@ -132,8 +132,6 @@ O processo do tratamento de dados é feito nas seguintes etapas:
 - Gerar Pesos das classes com base nos dados
 - Salvar Arrays em CSV
 
-*É necessário realizar o *
-
 
 Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo CSV e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
 
