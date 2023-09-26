@@ -94,6 +94,7 @@ Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantend
 * [![Keras.logo][Keras]][keras-url]
 * [![Tensorflow.logo][tf]][tf-url]
 * [![numpy.logo][Numpy]][np-url]
+* [![pandas.logo][Pandas]][pd-url]
   
 
 
@@ -193,8 +194,7 @@ def load_data(Train_df,idx,
     
     return (np.asarray(x), y_train_cat)
 ```
-
-Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho com novos dados, afim de verificar sua acurácia
+Após isso, o treinamento já pode ser iniciado. Lembre-se que recomenda-se realizar incialmente testes com menos epochs e steps testando os parâmetros de entrada da rede, com o objetivo de ajusta-los para um melhor treinamento. Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho com novos dados, afim de verificar sua acurácia
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -259,6 +259,9 @@ Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gr
 [macPy]: https://img.shields.io/badge/Instalar%20Python%20no%20Mac%20OS-000000?style=for-the-badge&logo=apple&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-mac%2F
 [linuxPy]: https://img.shields.io/badge/Instalar%20Python%20no%20LInux-F09D13?style=for-the-badge&logo=linux&logoColor=white&link=https%3A%2F%2Fpython.org.br%2Finstalacao-linux%2F
 [email-url]: https://img.shields.io/badge/ludmiladias.inf%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white
+[pd-url]: https://pandas.pydata.org/
+[pandas]: https://img.shields.io/badge/PANDAS-%23150458?style=for-the-badge&logo=pandas&logoColor=white
+
 
 
 
