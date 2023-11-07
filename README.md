@@ -26,7 +26,7 @@
   <p align="center">
     Rede Neural para segmentação de Mapas de Remissão.
     <br />
-    <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet/notebook?scriptVersionId=140818335"><strong>Arquivo no Kaggle >></strong></a>
+    <a href="https://colab.research.google.com/drive/1kQ548K7hezo_oABaG8FuUIQlhNw7OZYk?usp=sharing"><strong>Colab Notebook >></strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1aPpq7y0MaAZg8MKYj7dUbOeNFatMJPQa/view">Dataset PNG</a>
