@@ -128,7 +128,6 @@ O projeto é dividido em duas partes: Geração de dados, Treinamento e Avaliaç
 
 O processo do tratamento de dados é feito nas seguintes etapas:
 - Importar os dados das imagens para uma matriz (array)
-- Normalizar array de entrada (X)
 - Realizar o Label Encoder com o array do ground truth (Y)
 - Dividir os dados em array de treino e teste
 - Gerar Pesos das classes com base nos dados
@@ -137,7 +136,7 @@ O processo do tratamento de dados é feito nas seguintes etapas:
 
 Com o objetivo de treinar uma grande quantidade de dados mesmo com hardware limitado, é se utilizado no treinamento o "batch_generator" uma função que acessa o arquivo CSV e resgata para uso apenas uma parte do tamanho do batch para o step. No próximo step, um novo batch é recuperado e os dados do batch anterior são descartados.
 
-Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. A unica etapa que não deve ser executada antes do arquivo ser salvo no CSV é o *"to_categorical"*, que normalizar os valores das classes. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
+Sendo assim, após tratar e normalizar os dados do dataset eles devem ser salvos em um arquivo CSV. As etapas que não devem ser executadas antes do arquivo ser salvo no CSV é o *"to_categorical"*, que irá tranformar as classes em valores binários, e o *"normalize"*, para não ocorrer vazamento de dados. Essa etapa será executada dentro do batch generator, pois além dele demandar muito tempo para executar quando há uma grande quantidade de dados, também torna o arquivo final muito grande o que atrapalha o processamento das proximas etapas de conversão do array para um arquivo CSV.
 
 Como todos os processos estão sendo realizados visando que ele consiga ser executado nos limites de hardware que o Kaggle fornece, a etapa de salvamento dos arrays de teste e treino no CSV é executada salvando esse array em partes. Como pode visualizar a baixo, é passado como parâmetro para a função *"salvar_csv"* pedaços do *array* que são convertidos em listas e em dataframes e depois adicionados ao final do arquivo CSV por meio do modo "a" que a função *"to_csv"* possui, que se refere ao *"append"* do python.
 
@@ -163,37 +162,45 @@ Logo que a etapa anterior for concluída e os arquivos CSVs forem obtidos, poder
 # Batch Generator
 from tensorflow.keras.utils import to_categorical
 import json
+from keras.utils import normalize
+
+import pandas as pd
 
 def batch_generator(Train_df,batch_size,
-                    steps):
+                    steps, skiprows):
     idx=1
-    while True: 
-        yield load_data(Train_df,idx-1,batch_size)## Yields data
-        if idx<=steps:
+    while True:
+        yield load_data(Train_df,idx-1,batch_size, skiprows[idx-1])## Yields data
+        if idx<steps:
             idx+=1
         else:
             idx=1
-            
+        avoid_inactivity()
+
 def load_data(Train_df,idx,
-              batch_size):
+              batch_size, sr):
     n_classes = 17
 
     df = pd.read_csv(
-                  Train_df, skiprows=idx*batch_size,
+                  Train_df, skiprows=sr,
                   nrows=batch_size)
-    
-    x = [] 
+
+    x = []
     y = []
-    
+
     for i in range(0, batch_size):
         x.append(json.loads(df.iloc[i,0]))
         y.append(json.loads(df.iloc[i,1]))
-    
+
     y = np.asarray(y)
+    x = np.asarray(x)
+
     train_masks_cat = to_categorical(y, num_classes=n_classes)
-    y_train_cat = train_masks_cat.reshape((y.shape[0], y.shape[1], y.shape[2], n_classes))
-    
-    return (np.asarray(x), y_train_cat)
+    y = train_masks_cat.reshape((y.shape[0], y.shape[1], y.shape[2], n_classes))
+    x = normalize(x, axis=1)
+
+
+    return (x, y)
 ```
 
 ### Treinamento e Avaliação de desempenho
