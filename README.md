@@ -26,14 +26,14 @@
   <p align="center">
     Rede Neural para segmentação de Mapas de Remissão.
     <br />
-    <a href="https://www.kaggle.com/code/ludmiladias/multiclasses-unet/notebook?scriptVersionId=140818335"><strong>Arquivo no Kaggle >></strong></a>
+    <a href="https://colab.research.google.com/drive/1kQ548K7hezo_oABaG8FuUIQlhNw7OZYk?usp=sharing"><strong>Colab Notebook >></strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1aPpq7y0MaAZg8MKYj7dUbOeNFatMJPQa/view">Dataset PNG</a>
     .
     <a href="https://github.com/luddias/road_mapper-study/blob/main/Artigos_e_relatorios/IJCNN_2018_UFES_Raphael_Carneiro_Mapping_road_lanes_using_laser_remission_and_deep_neural_networks-1.pdf">Artigo Base</a>
     .
-    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv">Dataset CSV</a>
+    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv/data">Dataset CSV</a>
     
   </p>
 </div>
@@ -123,7 +123,8 @@ Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas 
   
 ### Execução
 
-O projeto é dividido em duas partes: Geração de dados e Treinamento e Teste da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
+O projeto é dividido em duas partes: Geração de dados, Treinamento e Avaliação da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
+### Pré Processamento de Dados
 
 O processo do tratamento de dados é feito nas seguintes etapas:
 - Importar os dados das imagens para uma matriz (array)
@@ -194,11 +195,21 @@ def load_data(Train_df,idx,
     
     return (np.asarray(x), y_train_cat)
 ```
+
+### Treinamento e Avaliação de desempenho
 Após isso, o treinamento já pode ser iniciado. Lembre-se que recomenda-se realizar incialmente testes com menos epochs e steps testando os parâmetros de entrada da rede, com o objetivo de ajusta-los para um melhor treinamento. Então, deve ser iniciado o treinamento. Ao fim dessa etapa, deve-se gerar os gráficos de acurácia para visualização dos resultados obtidos com o treino. Além disso, por fim, deve-se também executar o predict para se testar a rede treinada e verificar os resultados de desempenho com novos dados, afim de verificar sua acurácia
 
+
+O tempo para a execução dessa parte do projeto depende dos resultados obtidos durante. Na imagem abaixo é possível visualizar melhor as etapas que deveremos seguir nessa parte do projeto. Esse ciclo deve ser repetido até se obter os resultados desejados com a rede. Entre essas etapas, principalmente na parte de ajuste de parâmetros, pode-se fazer necessário implementar novas métricas ou abordagens a rede, dependendo dos resultados.
+
+<br />
+<div align="center">
+  <a href="https://github.com/luddias/RoadMapper-UNET/blob/main/src/Estrat%C3%A9gia%20e%20planejamento%20-%20Page%201.jpeg?raw=true">
+    <img src="src/Estratégia e planejamento - Page 1.jpeg" alt="Logo" width="500">
+</a>
+</div>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Resultados
