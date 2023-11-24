@@ -115,12 +115,7 @@ Obs.: Talvez seja necessário a instalação de outros pacotes além desse e dos
  * ![baixarLinux][linuxPy]
 
 Foi-se utilizado nesse projeto as máquinas virtuais gratuitas disponibilizadas no ambiente de desenvolvimento do [Kaggle](https://www.kaggle.com/) e Google Colab.
-<br>Propriedades de Hardware da máquina virtual utilizada:
-* RAM: 13 GB 
-* GPU: T4 x2 - 14 GB
-* Disco Rígido: 73 GB
-* Saída de dados: 19.5 GB
-  
+
 ### Execução
 
 O projeto é dividido em duas partes: Geração de dados, Treinamento e Avaliação da Rede. As duas etapas se encontram no notebook mas deve-se realizar uma pausa após a primeira etapa para reiniciar o kernel e liberar a memória para a próxima etapa.
@@ -215,6 +210,12 @@ O tempo para a execução dessa parte do projeto depende dos resultados obtidos 
     <img src="src/Estratégia e planejamento - Page 1.jpeg" alt="Logo" width="500">
 </a>
 </div>
+
+As métricas utilizadas para avaliação de desempenho do modelo foram:
+- Acurácia
+- F1 Score
+- Matriz de Convolução
+- IoU Score
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
