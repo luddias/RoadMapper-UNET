@@ -31,9 +31,11 @@
     <br />
     <a href="https://drive.google.com/file/d/1aPpq7y0MaAZg8MKYj7dUbOeNFatMJPQa/view">Dataset PNG</a>
     .
-    <a href="https://github.com/luddias/road_mapper-study/blob/main/Artigos_e_relatorios/IJCNN_2018_UFES_Raphael_Carneiro_Mapping_road_lanes_using_laser_remission_and_deep_neural_networks-1.pdf">Artigo Base</a>
+    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-6classes">Dataset 6 classes</a>
     .
-    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv/data">Dataset CSV</a>
+    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv/data">Dataset 17 classes</a>
+    <br>
+    <a href="https://github.com/luddias/road_mapper-study/blob/main/Artigos_e_relatorios/IJCNN_2018_UFES_Raphael_Carneiro_Mapping_road_lanes_using_laser_remission_and_deep_neural_networks-1.pdf">Artigo Base</a>
     
   </p>
 </div>
