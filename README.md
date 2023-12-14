@@ -216,6 +216,8 @@ O tempo para a execução dessa parte do projeto depende dos resultados obtidos 
 As métricas utilizadas para avaliação de desempenho do modelo foram:
 - Acurácia
 - F1 Score
+- Precisão
+- Recall
 - Matriz de Convolução
 - IoU Score
 
