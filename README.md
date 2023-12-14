@@ -26,14 +26,14 @@
   <p align="center">
     Rede Neural para segmentação de Mapas de Remissão.
     <br />
-    <a href="https://colab.research.google.com/drive/1kQ548K7hezo_oABaG8FuUIQlhNw7OZYk?usp=sharing"><strong>Colab Notebook >></strong></a>
+    <a href="https://colab.research.google.com/drive/1dQOUepYHLWfXA6mPaJcyYEpk9t6SQ3Ps?usp=sharing"><strong>Colab Notebook >></strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1aPpq7y0MaAZg8MKYj7dUbOeNFatMJPQa/view">Dataset PNG</a>
     .
     <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-6classes">Dataset 6 classes</a>
     .
-    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv/data">Dataset 17 classes</a>
+    <a href="https://www.kaggle.com/datasets/ludmiladias/road-mapper-dataset-csv/data">Dataset  classes</a>
     <br>
     <a href="https://github.com/luddias/road_mapper-study/blob/main/Artigos_e_relatorios/IJCNN_2018_UFES_Raphael_Carneiro_Mapping_road_lanes_using_laser_remission_and_deep_neural_networks-1.pdf">Artigo Base</a>
     
@@ -89,6 +89,14 @@ O Road Mapper DNN tem como objetivo gerar mapas de estrada com segmentação das
 Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes using Laser Remission and Deep Neural Networks"[1], entretanto utilizando-se uma rede neural de segmentação semântica diferente e mais atual, U-NET, ao invés da E-NET.
 O artigo usado como referência propõe o uso de Redes Neurais Profundas (Deep Neural Networks – DNN) para solucionar o problema de inferir a posição e as propriedades relevantes das faixas de trânsito urbanas com pouca ou nenhuma sinalização horizontal – subsistema da sinalização viária composta de marcas, símbolos e legendas, apostos sobre o pavimento da pista de rolamento – a fim de permitir a operação de carros autônomos nas descritas situações.
 Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantendo um espaço entre outros veículos, para que isso ocorra deve-se conter mapas internos das faixas das estradas. Os seres humanos fazem uso das sinalizações horizontais para se orientar quanto as estradas e existem vários trabalhos sobre como detectar essas marcações para se utilizar em sistemas ADAS, porém se essas marcas estiverem em condições ruins e o sistema depender somente disso, então se tornará impossível para o carro autônomo se locomover nas condições desejadas.
+
+### Descrição das Classes
+- Classe 0 (0) ➝ O que não é pista.
+- Classe 1 (1,2,3,4) ➝ Limite entre a classe 0 e a pista
+- Classe 2 (5,6) ➝ Detalhes de divisão de tipo de pista
+- Classe 3 (7,8,9,10) ➝ Área da pista mais próxima da classe 1
+- Classe 4 (11,12) ➝ Pista
+- Classe 5 (13,14,15,16) ➝ Centro da Pista
 
 ### Tecnologias Utilizadas
 
@@ -176,7 +184,7 @@ def batch_generator(Train_df,batch_size,
 
 def load_data(Train_df,idx,
               batch_size, sr):
-    n_classes = 17
+    n_classes = 
 
     df = pd.read_csv(
                   Train_df, skiprows=sr,
@@ -225,8 +233,34 @@ As métricas utilizadas para avaliação de desempenho do modelo foram:
 
 <!-- USAGE EXAMPLES -->
 ## Resultados
+<br>
+
+- *Gráfico das métricas de avaliação*
+
+![Relatório RGM DNN](https://github.com/luddias/RoadMapper-UNET/assets/92104501/576666e1-e52b-4d27-9e09-79b7f09320df)
+
+<br>
+
+- *Tabela dos resultados finais*
+
+Train Accuracy |	Val Accuracy |	Test Accuracy |	Test F1 |	Test MeanIoU |	Test Prec |	Test Recall
+-------|---------|---------|---------|---------|---------|--------
+0.9483 |	0.9418 |	0.9313 |	0.8280 |	0.7234 |	0.8310 |	0.8261
 
 
+<br>
+
+- *Matriz de Confusão*
+  
+![image](https://github.com/luddias/RoadMapper-UNET/assets/92104501/2ee89e62-5c0e-45fa-82c4-8fedb4bbe999)
+
+<br>
+
+- *Exemplo de imagem de saída do modelo*
+  
+![saida1326](https://github.com/luddias/RoadMapper-UNET/assets/92104501/8c06443e-3865-4595-976d-ca517eed60a2)
+
+<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
