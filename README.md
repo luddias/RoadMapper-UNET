@@ -90,6 +90,14 @@ Esse projeto foi feito utilizando como referência o artigo "Mapping Road Lanes 
 O artigo usado como referência propõe o uso de Redes Neurais Profundas (Deep Neural Networks – DNN) para solucionar o problema de inferir a posição e as propriedades relevantes das faixas de trânsito urbanas com pouca ou nenhuma sinalização horizontal – subsistema da sinalização viária composta de marcas, símbolos e legendas, apostos sobre o pavimento da pista de rolamento – a fim de permitir a operação de carros autônomos nas descritas situações.
 Nas vias urbanas, um carro autônomo deve permanecer dentro de uma faixa mantendo um espaço entre outros veículos, para que isso ocorra deve-se conter mapas internos das faixas das estradas. Os seres humanos fazem uso das sinalizações horizontais para se orientar quanto as estradas e existem vários trabalhos sobre como detectar essas marcações para se utilizar em sistemas ADAS, porém se essas marcas estiverem em condições ruins e o sistema depender somente disso, então se tornará impossível para o carro autônomo se locomover nas condições desejadas.
 
+### Descrição das Classes
+- Classe 0 (0) ➝ O que não é pista.
+- Classe 1 (1,2,3,4) ➝ Limite entre a classe 0 e a pista
+- Classe 2 (5,6) ➝ Detalhes de divisão de tipo de pista
+- Classe 3 (7,8,9,10) ➝ Área da pista mais próxima da classe 1
+- Classe 4 (11,12) ➝ Pista
+- Classe 5 (13,14,15,16) ➝ Centro da Pista
+
 ### Tecnologias Utilizadas
 
 * [![Python.logo][Python]][py-url]
